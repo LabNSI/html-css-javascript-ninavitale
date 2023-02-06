@@ -65,31 +65,31 @@ function resultat() {
     message += "\n- Prénom";
   }
 
-  // ?
+  // Vérifier si le nom a été saisie. Si non (chaine vide), ajouter "\n - Nom" à message
   if(f.elements["nom"].value == "")  {
     message += "\n- Nom";
   }
 
-  // ?
+  // Vérifier si la classe a été coché. Si non, ajouter "\n - Classe" à message
   if(!f.elements[2].checked && !f.elements[3].checked && !f.elements[4].checked){
     message += "\n- Classe";
   }
 
   var cpt = 0;
   // Les éléments du formulaire 5 à 11 sont les cases à cocher du choix de spécialités
-  // ?
+  // comptage des spécialitées cochées
   for (var i=5; i < 12; i++)  {
     if(f.elements[i].checked){
       cpt++;
     }
   }
 
-  // ?
+  // Vérifier 2 spécialité ont été sélectionné. Si non, ajouter "\n - Deux spécialités" à message
   if(cpt!=2){
     message += "\n- Deux spécialités";
   }
 
-  // ?
+  // Le formulaire est il bien compléter
   if(message != "Compléter les champs :"){
     alert(message);
     // Mettre fin à lexécution de la fonction
@@ -101,7 +101,7 @@ function resultat() {
             f.elements["nom"].value + " de " +
             f.elements["classe"].value;
 
-  // ?
+  // Si NUMERIQUE_SC_INFORM est sélectionné afficher :"\nTu fais le bon choix !" sinon afficher "\nEs-tu sur de ton choix ? !
   if(f.elements["NUMERIQUE_SC_INFORM"].checked){
     message += "\nTu fais le bon choix !";
   }
